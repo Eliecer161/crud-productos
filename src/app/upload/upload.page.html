@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Subir imagen</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <img src="data:image/jpeg;base64,{{image}}">
+  <ion-button (click)="takePicture()" expand="block">
+    <ion-icon slot="start" name="document"></ion-icon>
+    Elegir imagen
+  </ion-button>
+  <ion-button (click)="upload()" expand="block">
+    <ion-icon slot="start" name="cloud-upload"></ion-icon>
+    Subir imagen
+  </ion-button>
+</ion-content>

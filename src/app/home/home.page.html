@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-list lines="full">
+      <ion-list-header color="dark">
+        <ion-label>Listado de productos</ion-label>
+      </ion-list-header>
+      <ion-item button (click)="presentOptions(product)" *ngFor="let product of products">
+        <ion-avatar slot="start">
+          <img [src]="backend + '/products/image/' + product.image" />
+        </ion-avatar>
+        <ion-label>
+          <h2>{{ product.name }}</h2>
+          <h3>{{ product.description }}</h3>
+          <h4>${{ product.price }}</h4>
+        </ion-label>
+      </ion-item>
+      <ion-item *ngIf="!products?.length">
+        <ion-icon slot="start" name="sad"></ion-icon>
+        <ion-label>
+          No hay productos
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>
